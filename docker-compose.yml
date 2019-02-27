@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+
+    softweng-proj:
+        container_name: softweng-react
+        image: softweng-react
+        build:
+            context: .
+            dockerfile: Dockerfile
+        volumes:
+            - './app:/opt/react_app'
+        ports:
+            - '3000:3000'
+        environment:
+            - NODE_ENV=development
